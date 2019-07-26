@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace HTMLAgilityScraper
 {
-    class Program
+    class AgilityScrape
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
