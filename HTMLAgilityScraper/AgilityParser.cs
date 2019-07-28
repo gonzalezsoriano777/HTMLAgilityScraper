@@ -19,16 +19,25 @@ namespace HTMLAgilityScraper
             string nasDaq = "https://www.nasdaq.com/markets/most-active.aspx";
 
             HtmlWeb nasDaqWeb = new HtmlWeb();
-            HtmlDocument newDocument = nasDaqWeb.Load(nasDaq);
+            HtmlDocument newDoc = nasDaqWeb.Load(nasDaq);
+
+            HtmlNodeCollection stockTable = newDoc.DocumentNode.SelectNodes("//*[@id=\"_active\"]/table");
 
             List<ParseTable> ListOfStocks = new List<ParseTable>();
 
-            using(SqlConnection db = new SqlConnection(connectionString))
+            foreach(var stock in stockTable)
             {
-                
+                DateTime stockRecord = DateTime.Now;
+                string symbol = newDoc.DocumentNode.SelectSingleNode("").InnerText;
+                string company = newDoc.DocumentNode.SelectSingleNode("").InnerText;
+                string lastSale = newDoc.DocumentNode.SelectSingleNode("").InnerText;
+                string pChg = newDoc.DocumentNode.SelectSingleNode("").InnerText;
+                string volumeAvg = newDoc.DocumentNode.SelectSingleNode("").InnerText;
 
-                
+
+
             }
+            
 
         }
 
