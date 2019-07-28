@@ -11,18 +11,8 @@ namespace HTMLAgilityScraper
     {
         static void Main(string[] args)
         {
-            string nasDaq = "https://www.nasdaq.com/markets/most-active.aspx";
+            AgilityParser newParse = new AgilityParser();
 
-           HtmlWeb newScrape = new HtmlWeb();
-
-            HtmlDocument doc = newScrape.Load(nasDaq);
-
-            var node = doc.DocumentNode.SelectNodes("//*[@id=\"_active\"]/table").ToList();
-
-            foreach(var item in node)
-            {
-                Console.WriteLine(item.InnerText);
-            }
         }
     }
 }
