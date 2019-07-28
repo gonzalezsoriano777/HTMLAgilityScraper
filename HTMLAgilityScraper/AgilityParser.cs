@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
 using System.Data.SqlClient;
+using HTMLAgilityScraper.Agility;
 
 namespace HTMLAgilityScraper
 {
@@ -20,10 +21,13 @@ namespace HTMLAgilityScraper
             HtmlWeb nasDaqWeb = new HtmlWeb();
             HtmlDocument newDocument = nasDaqWeb.Load(nasDaq);
 
+            List<ParseTable> ListOfStocks = new List<ParseTable>();
 
-            using (SqlConnection db = new SqlConnection(connectionString))
+            using(SqlConnection db = new SqlConnection(connectionString))
             {
+                
 
+                
             }
 
         }
