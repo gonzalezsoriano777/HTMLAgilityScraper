@@ -7,7 +7,7 @@ using HtmlAgilityPack;
 
 namespace HTMLAgilityScraper
 {
-    class AgilityScrape
+   public class AgilityScrape
     {
         static void Main(string[] args)
         {

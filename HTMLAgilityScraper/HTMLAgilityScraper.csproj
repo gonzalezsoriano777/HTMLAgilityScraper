@@ -56,49 +56,49 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AgilityParser.cs" />
-    <Compile Include="Agility\ParserModel.Context.cs">
+    <Compile Include="Agility\ParseModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ParserModel.Context.tt</DependentUpon>
+      <DependentUpon>ParseModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Agility\ParserModel.cs">
+    <Compile Include="Agility\ParseModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ParserModel.tt</DependentUpon>
+      <DependentUpon>ParseModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Agility\ParserModel.Designer.cs">
+    <Compile Include="Agility\ParseModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ParserModel.edmx</DependentUpon>
+      <DependentUpon>ParseModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Agility\ParseTable.cs">
-      <DependentUpon>ParserModel.tt</DependentUpon>
+      <DependentUpon>ParseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="dbCenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <EntityDeploy Include="Agility\ParserModel.edmx">
+    <EntityDeploy Include="Agility\ParseModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ParserModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>ParseModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Agility\ParserModel.edmx.diagram">
-      <DependentUpon>ParserModel.edmx</DependentUpon>
+    <None Include="Agility\ParseModel.edmx.diagram">
+      <DependentUpon>ParseModel.edmx</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="Agility\ParserModel.Context.tt">
+    <Content Include="Agility\ParseModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ParserModel.Context.cs</LastGenOutput>
-      <DependentUpon>ParserModel.edmx</DependentUpon>
+      <DependentUpon>ParseModel.edmx</DependentUpon>
+      <LastGenOutput>ParseModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Agility\ParserModel.tt">
+    <Content Include="Agility\ParseModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ParserModel.edmx</DependentUpon>
-      <LastGenOutput>ParserModel.cs</LastGenOutput>
+      <DependentUpon>ParseModel.edmx</DependentUpon>
+      <LastGenOutput>ParseModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

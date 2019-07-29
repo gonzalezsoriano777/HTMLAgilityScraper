@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="StockRecord" Type="datetime" />
           <Property Name="Symbol" Type="nchar" MaxLength="10" />
           <Property Name="Company" Type="nchar" MaxLength="10" />
@@ -29,7 +29,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="StockRecord" Type="DateTime" Precision="3" />
           <Property Name="Symbol" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="Company" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
@@ -37,7 +37,7 @@
           <Property Name="PChg" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="VolumeAvg" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="ParsingOfDataEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ParsingOfDataEntity" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ParseTables" EntityType="ParsingOfDataModel.ParseTable" />
         </EntityContainer>
       </Schema>
@@ -45,7 +45,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ParsingOfDataModelStoreContainer" CdmEntityContainer="ParsingOfDataEntities">
+        <EntityContainerMapping StorageEntityContainer="ParsingOfDataModelStoreContainer" CdmEntityContainer="ParsingOfDataEntity">
           <EntitySetMapping Name="ParseTables">
             <EntityTypeMapping TypeName="ParsingOfDataModel.ParseTable">
               <MappingFragment StoreEntitySet="Table">
