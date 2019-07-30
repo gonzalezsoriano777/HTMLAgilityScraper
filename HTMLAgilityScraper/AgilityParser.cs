@@ -25,12 +25,16 @@ namespace HTMLAgilityScraper
             foreach (var stock in stockTable)
             {
                 DateTime stockRecord = DateTime.Now;
+
                 string symbol = stock.SelectSingleNode("td[1]/h3/a").InnerText;
                 string company = stock.SelectSingleNode("td[2]/b/a").InnerText;
                 string lastSale = stock.SelectSingleNode("td[4]").InnerText;
+                string charChange = stock.SelectSingleNode("td[5]/span").InnerText.Replace("&nbsp;", "").Replace(" ", "").Replace("&#9650;", " ").Replace("&#9660;", " ");
 
-                string change = stock.SelectSingleNode("td[5]/span").InnerText;
-                string pChg = stock.SelectSingleNode("td[5]/span").InnerText;
+                int trimChange = 4;
+
+                string change = charChange.Substring(0, trimChange).Trim();
+                string pChg = charChange.Substring(trimChange).Trim();
                 string volumeAvg = stock.SelectSingleNode("td[6]").InnerText;
 
                 ParseTable Stocks = new ParseTable();
@@ -45,7 +49,6 @@ namespace HTMLAgilityScraper
                 ListOfStocks.Add(Stocks);
 
                 InsertDataToTable(Stocks);
-
             }
         }     
     }

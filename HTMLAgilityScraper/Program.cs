@@ -14,7 +14,7 @@ namespace HTMLAgilityScraper
             AgilityParser parse = new AgilityParser();
             parse.Parsing();
 
-            //dbCenter insertion = new dbCenter();
+            dbCenter insertion = new dbCenter();
             
 
         }
