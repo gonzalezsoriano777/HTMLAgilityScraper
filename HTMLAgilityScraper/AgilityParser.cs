@@ -29,12 +29,14 @@ namespace HTMLAgilityScraper
                 string symbol = stock.SelectSingleNode("td[1]/h3/a").InnerText;
                 string company = stock.SelectSingleNode("td[2]/b/a").InnerText;
                 string lastSale = stock.SelectSingleNode("td[4]").InnerText;
-                string charChange = stock.SelectSingleNode("td[5]/span").InnerText.Replace("&nbsp;", "").Replace(" ", "").Replace("&#9650;", " ").Replace("&#9660;", " ");
+                string charChange = stock.SelectSingleNode("td[5]/span").InnerText.Replace("&nbsp;", "")
+                    .Replace(" ", "").Replace("&#9650;", " ").Replace("&#9660;", " ");
 
                 int trimChange = 4;
+                int trimPercent_Change = 5;
 
                 string change = charChange.Substring(0, trimChange).Trim();
-                string pChg = charChange.Substring(trimChange).Trim();
+                string pChg = charChange.Substring(trimPercent_Change).Trim();
                 string volumeAvg = stock.SelectSingleNode("td[6]").InnerText;
 
                 ParseTable Stocks = new ParseTable();
