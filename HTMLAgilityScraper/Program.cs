@@ -12,11 +12,7 @@ namespace HTMLAgilityScraper
         static void Main(string[] args)
         {
             AgilityParser parse = new AgilityParser();
-            parse.Parsing();
-
-           // dbCenter insertion = new dbCenter();
-            
-
+            parse.Parsing();            
         }
     }
 }
