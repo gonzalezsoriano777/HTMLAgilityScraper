@@ -14,30 +14,24 @@ namespace HTMLAgilityScraper
         
         public void Parsing()
         {
-            string nasDaq = "https://www.nasdaq.com/markets/most-active.aspx";
+            string nasDaq = "https://www.nasdaq.com/market-activity/stocks";
 
             HtmlWeb nasDaqWeb = new HtmlWeb();
             HtmlDocument newDoc = nasDaqWeb.Load(nasDaq);
 
-            HtmlNodeCollection stockTable = newDoc.DocumentNode.SelectNodes("//*[@id=\"_active\"]/table/tr");
+            HtmlNodeCollection stockTable = newDoc.DocumentNode.SelectNodes("/html/body/div[4]/div/main/div/article/div[2]/div/section[2]/div/div/div[2]/div[4]/table/tbody");
 
             List<ParseTable> ListOfStocks = new List<ParseTable>();
             foreach (var stock in stockTable)
             {
                 DateTime stockRecord = DateTime.Now;
 
-                string symbol = stock.SelectSingleNode("td[1]/h3/a").InnerText;
-                string company = stock.SelectSingleNode("td[2]/b/a").InnerText;
-                string lastSale = stock.SelectSingleNode("td[4]").InnerText;
-                string charChange = stock.SelectSingleNode("td[5]/span").InnerText.Replace("&nbsp;", "")
-                    .Replace(" ", "").Replace("&#9650;", " ").Replace("&#9660;", " ");
+                string symbol = stock.SelectSingleNode("/html/body/div[4]/div/main/div/article/div[2]/div/section[2]/div/div/div[2]/div[4]/table/tbody/tr[1]/th").InnerText;
+                string company = stock.SelectSingleNode("/html/body/div[4]/div/main/div/article/div[2]/div/section[2]/div/div/div[2]/div[4]/table/tbody/tr[1]/td[1]").InnerText;
+                string lastSale = stock.SelectSingleNode("/html/body/div[4]/div/main/div/article/div[2]/div/section[2]/div/div/div[2]/div[4]/table/tbody/tr[1]/td[2]/a").InnerText;
+                string change = stock.SelectSingleNode("/html/body/div[4]/div/main/div/article/div[2]/div/section[2]/div/div/div[2]/div[4]/table/tbody/tr[1]/td[3]").InnerText;
+                string pChg = stock.SelectSingleNode("/html/body/div[4]/div/main/div/article/div[2]/div/section[2]/div/div/div[2]/div[4]/table/tbody/tr[1]/td[4]").InnerText;
 
-                int trimChange = 4;
-                int trimPercent_Change = 5;
-
-                string change = charChange.Substring(0, trimChange).Trim();
-                string pChg = charChange.Substring(trimPercent_Change).Trim();
-                string volumeAvg = stock.SelectSingleNode("td[6]").InnerText;
 
                 ParseTable Stocks = new ParseTable();
                 Stocks.StockRecord = stockRecord;
@@ -46,8 +40,6 @@ namespace HTMLAgilityScraper
                 Stocks.LastSale = lastSale;
                 Stocks.Change = change;
                 Stocks.PChg = pChg;
-                Stocks.VolumeAvg = volumeAvg;
-
                 ListOfStocks.Add(Stocks);
 
                 InsertDataToTable(Stocks);

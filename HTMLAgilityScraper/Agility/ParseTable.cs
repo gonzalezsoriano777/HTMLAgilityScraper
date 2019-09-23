@@ -21,6 +21,5 @@ namespace HTMLAgilityScraper.Agility
         public string LastSale { get; set; }
         public string Change { get; set; }
         public string PChg { get; set; }
-        public string VolumeAvg { get; set; }
     }
 }

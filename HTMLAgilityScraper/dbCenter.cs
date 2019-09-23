@@ -11,17 +11,14 @@ namespace HTMLAgilityScraper
 {
     public class dbCenter 
     {
-
         string connectionString = @"Data Source=(localdb)\ProjectsV13;Initial Catalog=ParsingOfData;Integrated Security=True;
                      Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
         public void InsertDataToTable(ParseTable Stocks)
         {
-
             using (SqlConnection db = new SqlConnection(connectionString))
             {
-
-                string insert = "INSERT INTO dbo.ParsingTable ( StockRecord, Symbol, Company, LastSale, Change, PChg, VolumeAvg ) VALUES (@stockRecord, @symbol, @company, @lastSale, @change, @pChg, @volumeAvg)";
+                string insert = "INSERT INTO dbo.ParsingTable ( StockRecord, Symbol, Company, LastSale, Change, PChg) VALUES (@stockRecord, @symbol, @company, @lastSale, @change, @pChg)";
                 {
                     db.Open();
                     Console.WriteLine("Database has been opened");
@@ -29,17 +26,14 @@ namespace HTMLAgilityScraper
 
                     using(SqlCommand dataToTable = new SqlCommand(insert, db))
                     {
-
                         dataToTable.Parameters.AddWithValue("@stockRecord", Stocks.StockRecord);
                         dataToTable.Parameters.AddWithValue("@symbol", Stocks.Symbol);
                         dataToTable.Parameters.AddWithValue("@company", Stocks.Company);
                         dataToTable.Parameters.AddWithValue("@lastSale", Stocks.LastSale);
                         dataToTable.Parameters.AddWithValue("@change", Stocks.Change);
                         dataToTable.Parameters.AddWithValue("@pChg", Stocks.PChg);
-                        dataToTable.Parameters.AddWithValue("@volumeAvg", Stocks.VolumeAvg);
 
                         dataToTable.ExecuteNonQuery();
-
                     }
 
                     db.Close();
