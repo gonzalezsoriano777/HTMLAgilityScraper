@@ -32,7 +32,6 @@ namespace HTMLAgilityScraper
                 string change = stock.SelectSingleNode("/html/body/div[4]/div/main/div/article/div[2]/div/section[2]/div/div/div[2]/div[4]/table/tbody/tr[1]/td[3]").InnerText;
                 string pChg = stock.SelectSingleNode("/html/body/div[4]/div/main/div/article/div[2]/div/section[2]/div/div/div[2]/div[4]/table/tbody/tr[1]/td[4]").InnerText;
 
-
                 ParseTable Stocks = new ParseTable();
                 Stocks.StockRecord = stockRecord;
                 Stocks.Symbol = symbol;
