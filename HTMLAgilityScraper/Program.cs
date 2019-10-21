@@ -11,8 +11,8 @@ namespace HTMLAgilityScraper
     {
         static void Main(string[] args)
         {
-            AgilityParser parse = new AgilityParser();
-            parse.Parsing();            
+            AgilityParser applicationRunner = new AgilityParser();
+            applicationRunner.navigateToFinancePage();
         }
     }
 }
