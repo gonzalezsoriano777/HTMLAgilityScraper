@@ -22,12 +22,19 @@ namespace HTMLAgilityScraper
             option.AddArgument("--headless");
             option.AddArgument("window-size=1200,1100");
 
-            using(IWebDriver driver = new ChromeDriver(option))
+            using(IWebDriver driver = new ChromeDriver())
             {
                 driver.Navigate().GoToUrl("https://www.google.com/finance");
 
                 WebDriverWait signIn = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
                 signIn.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//*[@id=\"gb\"]/div/div[1]/a")));
+
+                IWebElement signInButton = driver.FindElement(By.XPath("//*[@id=\"gb\"]/div/div[1]/a"));
+
+                signInButton.Click();
+
+               // Console.WriteLine("Works...");
+
             }
 
 
