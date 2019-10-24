@@ -24,14 +24,29 @@ namespace HTMLAgilityScraper
 
             using(IWebDriver driver = new ChromeDriver())
             {
-                driver.Navigate().GoToUrl("https://www.google.com/finance");
+                driver.Navigate().GoToUrl("https://www.google.com/");
 
                 WebDriverWait signIn = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-                signIn.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//*[@id=\"gb\"]/div/div[1]/a")));
+                signIn.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//*[@id=\"gb_70\"]")));
 
-                IWebElement signInButton = driver.FindElement(By.XPath("//*[@id=\"gb\"]/div/div[1]/a"));
+                IWebElement signInButton = driver.FindElement(By.XPath("//*[@id=\"gb_70\"]"));
 
                 signInButton.Click();
+
+                IWebElement email = driver.FindElement(By.Id("identifierId"));
+
+                email.SendKeys("hectorgonzalez.student@careerdevs.com");
+                email.SendKeys(Keys.Enter);
+
+                WebDriverWait passwordDuration = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+                passwordDuration.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//*[@id=\"password\"]/div[1]/div/div[1]/input")));
+
+                IWebElement password = driver.FindElement(By.XPath("//*[@id=\"password\"]/div[1]/div/div[1]/input"));
+
+                password.SendKeys("Hector346321");
+                password.SendKeys(Keys.Enter);
+
+                driver.Navigate().GoToUrl("https://google.com/finance");
 
                // Console.WriteLine("Works...");
 
