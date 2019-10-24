@@ -47,11 +47,12 @@ namespace HTMLAgilityScraper
                 password.SendKeys(Keys.Enter);
 
                 driver.Navigate().GoToUrl("https://google.com/finance");
-
-               // Console.WriteLine("Works...");
-
             }
 
+        }
+
+        public void grabAndPrintStockToConsole()
+        {
 
         }
 
