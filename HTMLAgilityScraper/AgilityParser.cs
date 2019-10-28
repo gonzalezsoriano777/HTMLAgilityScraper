@@ -18,9 +18,11 @@ namespace HTMLAgilityScraper
 
         public void navigateToFinancePage()
         {
+            /*
             ChromeOptions option = new ChromeOptions();
             option.AddArgument("--headless");
             option.AddArgument("window-size=1200,1100");
+            */
 
             using(IWebDriver driver = new ChromeDriver())
             {
@@ -53,6 +55,7 @@ namespace HTMLAgilityScraper
 
         public void grabAndPrintStockToConsole()
         {
+
         }
 
         /*
