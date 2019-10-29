@@ -13,6 +13,9 @@ namespace HTMLAgilityScraper
         {
             AgilityParser applicationRunner = new AgilityParser();
             applicationRunner.navigateToFinancePage();
+
+            AgilityParser consoleStocker = new AgilityParser();
+            consoleStocker.grabAndPrintStockToConsole();
         }
     }
 }
