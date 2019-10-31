@@ -19,7 +19,6 @@ namespace HTMLAgilityScraper
             HtmlWeb newStock = new HtmlWeb();
             HtmlDocument newDoc = newStock.Load(marketSummary);
             var newNodes = newDoc.DocumentNode.SelectSingleNode("/html/body/div[4]/div[1]/div[1]/div/div/table/tbody/tr[1]");
-
         }
 
 
