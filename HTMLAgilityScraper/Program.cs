@@ -11,11 +11,10 @@ namespace HTMLAgilityScraper
     {
         static void Main(string[] args)
         {
-            AgilityParser applicationRunner = new AgilityParser();
-            applicationRunner.navigateToFinancePage();
+
 
             AgilityParser consoleStocker = new AgilityParser();
-            consoleStocker.grabAndPrintStockToConsole();
+            consoleStocker.consoleStockInput();
         }
     }
 }
