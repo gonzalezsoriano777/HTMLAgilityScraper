@@ -27,7 +27,6 @@ namespace HTMLAgilityScraper
             }
         }
 
-
         /*
          
         List<ParseTable> ListOfStocks = new List<ParseTable>();
