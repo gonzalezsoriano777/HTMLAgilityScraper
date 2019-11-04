@@ -26,7 +26,6 @@ namespace HTMLAgilityScraper
                 Console.WriteLine(stock);
             }
         }
-
         /*
          
         List<ParseTable> ListOfStocks = new List<ParseTable>();
