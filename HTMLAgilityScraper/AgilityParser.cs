@@ -11,20 +11,13 @@ namespace HTMLAgilityScraper
 {
     public class AgilityParser : dbCenter
     {
-
         public void consoleStockInput()
         {
             string marketSummary = "https://www.marketwatch.com/markets/us?mod=markets";
 
-            HtmlWeb newStock = new HtmlWeb();
-            HtmlDocument newDoc = newStock.Load(marketSummary);
-            HtmlNodeCollection newNodes = newDoc.DocumentNode.SelectNodes("/html/body/div[4]/div[1]/div[1]/div/div/table");
-
-            foreach(var element in newNodes)
-            {
-                var stock = element.InnerText.ToString();
-                Console.WriteLine(stock);
-            }
+            HtmlWeb newStockPage = new HtmlWeb();
+            HtmlDocument newDoc = newStockPage.Load(marketSummary);
+            HtmlNodeCollection stockTable = newDoc.DocumentNode.SelectNodes("/html/body/div[4]/div[1]/div[1]/div/div/table");
         }
         /*
          
