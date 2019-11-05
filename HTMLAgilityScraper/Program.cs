@@ -13,8 +13,8 @@ namespace HTMLAgilityScraper
         {
 
 
-            AgilityParser consoleStocker = new AgilityParser();
-            consoleStocker.consoleStockInput();
+            AgilityParser dbStocker = new AgilityParser();
+            dbStocker.consoleStockInput();
         }
     }
 }

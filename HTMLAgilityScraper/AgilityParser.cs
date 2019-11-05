@@ -9,19 +9,41 @@ using HTMLAgilityScraper.Agility;
 
 namespace HTMLAgilityScraper
 {
+
+    /*
+     * Stock Input
+     * Ticker
+     * Name
+     * Last Price
+     * Change
+     * Percent Change
+     */
+
     public class AgilityParser : dbCenter
     {
+
         public void consoleStockInput()
         {
+
             string marketSummary = "https://www.marketwatch.com/markets/us?mod=markets";
 
             HtmlWeb newStockPage = new HtmlWeb();
             HtmlDocument newDoc = newStockPage.Load(marketSummary);
+
             HtmlNodeCollection stockTable = newDoc.DocumentNode.SelectNodes("/html/body/div[4]/div[1]/div[1]/div/div/table");
+
+            foreach(var element in stockTable)
+            {
+                var stocks = element.InnerText.ToString();
+                Console.WriteLine(stocks);
+            }
         }
-        /*
-         
-        List<ParseTable> ListOfStocks = new List<ParseTable>();
+
+        public void stockDataImplementation()
+        {
+            /*
+
+            List<ParseTable> ListOfStocks = new List<ParseTable>();
 
             foreach (var stock in stockTable)
             {
@@ -43,9 +65,10 @@ namespace HTMLAgilityScraper
                 ListOfStocks.Add(Stocks);
 
                 InsertDataToTable(Stocks);
+            
             }
             */
+        }
 
-        
     }
 }     
