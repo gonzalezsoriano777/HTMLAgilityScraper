@@ -12,7 +12,7 @@ namespace HTMLAgilityScraper.Agility
     using System;
     using System.Collections.Generic;
     
-    public partial class ParseTable
+    public partial class ParsingTable
     {
         public int Id { get; set; }
         public Nullable<System.DateTime> StockRecord { get; set; }

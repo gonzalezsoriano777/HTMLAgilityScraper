@@ -13,10 +13,10 @@ namespace HTMLAgilityScraper.Agility
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ParsingOfDataEntity : DbContext
+    public partial class ParsingOfDataEntityy : DbContext
     {
-        public ParsingOfDataEntity()
-            : base("name=ParsingOfDataEntity")
+        public ParsingOfDataEntityy()
+            : base("name=ParsingOfDataEntityy")
         {
         }
     
@@ -25,6 +25,6 @@ namespace HTMLAgilityScraper.Agility
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<ParseTable> ParseTables { get; set; }
+        public virtual DbSet<ParsingTable> ParsingTables { get; set; }
     }
 }

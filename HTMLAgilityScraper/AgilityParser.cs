@@ -32,19 +32,19 @@ namespace HTMLAgilityScraper
 
             HtmlNodeCollection stockTable = newDoc.DocumentNode.SelectNodes("/html/body/div[4]/div[1]/div[1]/div/div/table");
 
-            List<ParseTable> ListOfStocks = new List<ParseTable>();
+            List<ParsingTable> ListOfStocks = new List<ParsingTable>();
 
             foreach (var stock in stockTable)
             {
                 DateTime stockRecord = DateTime.Now;
 
-                string ticker = stock.SelectSingleNode("").InnerText;
-                string company = stock.SelectSingleNode("").InnerText;
-                string lastSale = stock.SelectSingleNode("").InnerText;
-                string change = stock.SelectSingleNode("").InnerText;
-                string pChg = stock.SelectSingleNode("").InnerText;
+                string ticker = stock.SelectSingleNode("//html/body/div[4]/div[1]/div[1]/div/div/table/tbody/tr[1]/td[1]").InnerText;
+                string company = stock.SelectSingleNode("/html/body/div[4]/div[1]/div[1]/div/div/table/tbody/tr[1]/td[2]").InnerText;
+                string lastSale = stock.SelectSingleNode("/html/body/div[4]/div[1]/div[1]/div/div/table/tbody/tr[1]/td[3]").InnerText;
+                string change = stock.SelectSingleNode("/html/body/div[4]/div[1]/div[1]/div/div/table/tbody/tr[1]/td[4]").InnerText;
+                string pChg = stock.SelectSingleNode("/html/body/div[4]/div[1]/div[1]/div/div/table/tbody/tr[1]/td[5]").InnerText;
 
-                ParseTable Stocks = new ParseTable();
+                ParsingTable Stocks = new ParsingTable();
                 Stocks.StockRecord = stockRecord;
                 Stocks.Ticker = ticker;
                 Stocks.Company = company;

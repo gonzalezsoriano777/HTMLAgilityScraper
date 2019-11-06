@@ -5,57 +5,57 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="ParsingOfDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Table">
+        <EntityType Name="ParsingTable">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="StockRecord" Type="datetime" />
-          <Property Name="Symbol" Type="nchar" MaxLength="10" />
-          <Property Name="Company" Type="nchar" MaxLength="10" />
-          <Property Name="LastSale" Type="text" />
+          <Property Name="Ticker" Type="nvarchar" MaxLength="50" />
+          <Property Name="Company" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastSale" Type="nvarchar" MaxLength="50" />
+          <Property Name="Change" Type="nvarchar" MaxLength="50" />
           <Property Name="PChg" Type="nvarchar" MaxLength="50" />
-          <Property Name="VolumeAvg" Type="text" />
         </EntityType>
         <EntityContainer Name="ParsingOfDataModelStoreContainer">
-          <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ParsingTable" EntityType="Self.ParsingTable" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ParsingOfDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="ParseTable">
+        <EntityType Name="ParsingTable">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="StockRecord" Type="DateTime" Precision="3" />
-          <Property Name="Symbol" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Company" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="LastSale" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Ticker" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Company" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastSale" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Change" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PChg" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="VolumeAvg" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="ParsingOfDataEntity" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ParseTables" EntityType="ParsingOfDataModel.ParseTable" />
+        <EntityContainer Name="ParsingOfDataEntityy" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ParsingTables" EntityType="Self.ParsingTable" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ParsingOfDataModelStoreContainer" CdmEntityContainer="ParsingOfDataEntity">
-          <EntitySetMapping Name="ParseTables">
-            <EntityTypeMapping TypeName="ParsingOfDataModel.ParseTable">
-              <MappingFragment StoreEntitySet="Table">
+        <EntityContainerMapping StorageEntityContainer="ParsingOfDataModelStoreContainer" CdmEntityContainer="ParsingOfDataEntityy">
+          <EntitySetMapping Name="ParsingTables">
+            <EntityTypeMapping TypeName="ParsingOfDataModel.ParsingTable">
+              <MappingFragment StoreEntitySet="ParsingTable">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="StockRecord" ColumnName="StockRecord" />
-                <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+                <ScalarProperty Name="Ticker" ColumnName="Ticker" />
                 <ScalarProperty Name="Company" ColumnName="Company" />
                 <ScalarProperty Name="LastSale" ColumnName="LastSale" />
+                <ScalarProperty Name="Change" ColumnName="Change" />
                 <ScalarProperty Name="PChg" ColumnName="PChg" />
-                <ScalarProperty Name="VolumeAvg" ColumnName="VolumeAvg" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

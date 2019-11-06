@@ -73,53 +73,53 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AgilityParser.cs" />
-    <Compile Include="Agility\ParseModel.Context.cs">
+    <Compile Include="Agility\ParsingDataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ParseModel.Context.tt</DependentUpon>
+      <DependentUpon>ParsingDataModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Agility\ParseModel.cs">
+    <Compile Include="Agility\ParsingDataModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ParseModel.tt</DependentUpon>
+      <DependentUpon>ParsingDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Agility\ParseModel.Designer.cs">
+    <Compile Include="Agility\ParsingDataModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ParseModel.edmx</DependentUpon>
+      <DependentUpon>ParsingDataModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Agility\ParseTable.cs">
-      <DependentUpon>ParseModel.tt</DependentUpon>
+    <Compile Include="Agility\ParsingTable.cs">
+      <DependentUpon>ParsingDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="dbCenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="Agility\ParsingDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ParsingDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Agility\ParsingDataModel.edmx.diagram">
+      <DependentUpon>ParsingDataModel.edmx</DependentUpon>
+    </None>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <EntityDeploy Include="Agility\ParseModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ParseModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Agility\ParseModel.edmx.diagram">
-      <DependentUpon>ParseModel.edmx</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Agility\ParseModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ParseModel.edmx</DependentUpon>
-      <LastGenOutput>ParseModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Agility\ParseModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ParseModel.edmx</DependentUpon>
-      <LastGenOutput>ParseModel.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Agility\ParsingDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ParsingDataModel.edmx</DependentUpon>
+      <LastGenOutput>ParsingDataModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Agility\ParsingDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ParsingDataModel.edmx</DependentUpon>
+      <LastGenOutput>ParsingDataModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
