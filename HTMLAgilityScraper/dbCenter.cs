@@ -27,7 +27,7 @@ namespace HTMLAgilityScraper
 
                     using(SqlCommand dataToTable = new SqlCommand(insert, db))
                     {
-                        dataToTable.Parameters.AddWithValue("@stockRecord", Stocks.StockRecord).ToString();
+                        dataToTable.Parameters.AddWithValue("@stockRecord", Stocks.StockRecord);
                         dataToTable.Parameters.AddWithValue("@ticker", Stocks.Ticker);
                         dataToTable.Parameters.AddWithValue("@company", Stocks.Company);
                         dataToTable.Parameters.AddWithValue("@lastSale", Stocks.LastSale);
