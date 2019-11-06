@@ -22,7 +22,7 @@ namespace HTMLAgilityScraper
     public class AgilityParser : dbCenter
     {
 
-        public void consoleStockInput()
+        public void stockDataImplementation()
         {
 
             string marketSummary = "https://www.marketwatch.com/markets/us?mod=markets";
@@ -32,16 +32,11 @@ namespace HTMLAgilityScraper
 
             HtmlNodeCollection stockTable = newDoc.DocumentNode.SelectNodes("/html/body/div[4]/div[1]/div[1]/div/div/table");
 
-            foreach(var element in stockTable)
+            foreach (var element in stockTable)
             {
                 var stocks = element.InnerText.ToString();
                 Console.WriteLine(stocks);
             }
-        }
-
-        public void stockDataImplementation()
-        {
-            /*
 
             List<ParseTable> ListOfStocks = new List<ParseTable>();
 
@@ -49,16 +44,16 @@ namespace HTMLAgilityScraper
             {
                 DateTime stockRecord = DateTime.Now;
 
-                string symbol = stock.SelectSingleNode("/html/body/div[4]/div/main/div/article/div[2]/div/section[2]/div/div/div[2]/div[4]/table/tbody/tr[1]/th").InnerText;
-                string company = stock.SelectSingleNode("/html/body/div[4]/div/main/div/article/div[2]/div/section[2]/div/div/div[2]/div[4]/table/tbody/tr[1]/td[1]").InnerText;
-                string lastSale = stock.SelectSingleNode("/html/body/div[4]/div/main/div/article/div[2]/div/section[2]/div/div/div[2]/div[4]/table/tbody/tr[1]/td[2]/a").InnerText;
-                string change = stock.SelectSingleNode("/html/body/div[4]/div/main/div/article/div[2]/div/section[2]/div/div/div[2]/div[4]/table/tbody/tr[1]/td[3]").InnerText;
-                string pChg = stock.SelectSingleNode("/html/body/div[4]/div/main/div/article/div[2]/div/section[2]/div/div/div[2]/div[4]/table/tbody/tr[1]/td[4]").InnerText;
+                string ticker = stock.SelectSingleNode("").InnerText;
+                string name = stock.SelectSingleNode("").InnerText;
+                string lastSale = stock.SelectSingleNode("").InnerText;
+                string change = stock.SelectSingleNode("").InnerText;
+                string pChg = stock.SelectSingleNode("").InnerText;
 
                 ParseTable Stocks = new ParseTable();
                 Stocks.StockRecord = stockRecord;
-                Stocks.Symbol = symbol;
-                Stocks.Company = company;
+                Stocks.Ticker = ticker;
+                Stocks.Name = name;
                 Stocks.LastSale = lastSale;
                 Stocks.Change = change;
                 Stocks.PChg = pChg;
@@ -67,7 +62,6 @@ namespace HTMLAgilityScraper
                 InsertDataToTable(Stocks);
             
             }
-            */
         }
 
     }

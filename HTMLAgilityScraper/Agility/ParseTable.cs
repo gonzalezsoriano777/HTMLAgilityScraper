@@ -16,7 +16,7 @@ namespace HTMLAgilityScraper.Agility
     {
         public int Id { get; set; }
         public Nullable<System.DateTime> StockRecord { get; set; }
-        public string Symbol { get; set; }
+        public string Ticker { get; set; }
         public string Company { get; set; }
         public string LastSale { get; set; }
         public string Change { get; set; }

@@ -14,7 +14,7 @@ namespace HTMLAgilityScraper
 
 
             AgilityParser dbStocker = new AgilityParser();
-            dbStocker.consoleStockInput();
+            dbStocker.stockDataImplementation();
         }
     }
 }
