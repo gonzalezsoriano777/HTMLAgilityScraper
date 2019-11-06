@@ -32,12 +32,6 @@ namespace HTMLAgilityScraper
 
             HtmlNodeCollection stockTable = newDoc.DocumentNode.SelectNodes("/html/body/div[4]/div[1]/div[1]/div/div/table");
 
-            foreach (var element in stockTable)
-            {
-                var stocks = element.InnerText.ToString();
-                Console.WriteLine(stocks);
-            }
-
             List<ParseTable> ListOfStocks = new List<ParseTable>();
 
             foreach (var stock in stockTable)
@@ -45,7 +39,7 @@ namespace HTMLAgilityScraper
                 DateTime stockRecord = DateTime.Now;
 
                 string ticker = stock.SelectSingleNode("").InnerText;
-                string name = stock.SelectSingleNode("").InnerText;
+                string company = stock.SelectSingleNode("").InnerText;
                 string lastSale = stock.SelectSingleNode("").InnerText;
                 string change = stock.SelectSingleNode("").InnerText;
                 string pChg = stock.SelectSingleNode("").InnerText;
@@ -53,7 +47,7 @@ namespace HTMLAgilityScraper
                 ParseTable Stocks = new ParseTable();
                 Stocks.StockRecord = stockRecord;
                 Stocks.Ticker = ticker;
-                Stocks.Name = name;
+                Stocks.Company = company;
                 Stocks.LastSale = lastSale;
                 Stocks.Change = change;
                 Stocks.PChg = pChg;
