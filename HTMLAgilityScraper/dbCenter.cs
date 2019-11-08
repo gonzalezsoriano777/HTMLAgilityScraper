@@ -27,12 +27,12 @@ namespace HTMLAgilityScraper
 
                     using(SqlCommand dataToTable = new SqlCommand(insert, db))
                     {
-                        dataToTable.Parameters.AddWithValue("@stockRecord", Stocks.StockRecord);
-                        dataToTable.Parameters.AddWithValue("@ticker", Stocks.Ticker);
-                        dataToTable.Parameters.AddWithValue("@company", Stocks.Company);
-                        dataToTable.Parameters.AddWithValue("@lastSale", Stocks.LastSale);
-                        dataToTable.Parameters.AddWithValue("@change", Stocks.Change);
-                        dataToTable.Parameters.AddWithValue("@pChg", Stocks.PChg);
+                        dataToTable.Parameters.AddWithValue("@stockRecord", Stocks.StockRecord).ToString();
+                        dataToTable.Parameters.AddWithValue("@ticker", Stocks.Ticker).ToString();
+                        dataToTable.Parameters.AddWithValue("@company", Stocks.Company).ToString();
+                        dataToTable.Parameters.AddWithValue("@lastSale", Stocks.LastSale).ToString();
+                        dataToTable.Parameters.AddWithValue("@change", Stocks.Change).ToString();
+                        dataToTable.Parameters.AddWithValue("@pChg", Stocks.PChg).ToString();
 
                         dataToTable.ExecuteNonQuery();
                     }

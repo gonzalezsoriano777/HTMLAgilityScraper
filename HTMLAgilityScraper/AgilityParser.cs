@@ -30,7 +30,7 @@ namespace HTMLAgilityScraper
             HtmlWeb newStockPage = new HtmlWeb();
             HtmlDocument newDoc = newStockPage.Load(marketSummary);
 
-            HtmlNodeCollection stockTable = newDoc.DocumentNode.SelectNodes("/html/body/div[4]/div[1]/div[1]/div/div/table");
+            HtmlNodeCollection stockTable = newDoc.DocumentNode.SelectNodes("/html/body/div[4]/div[1]/div[1]/div/div/table/tbody");
 
             List<ParsingTable> ListOfStocks = new List<ParsingTable>();
 
@@ -38,11 +38,11 @@ namespace HTMLAgilityScraper
             {
                 DateTime stockRecord = DateTime.Now;
 
-                var ticker = stock.SelectSingleNode("/html/body/div[4]/div[1]/div[1]/div/div/table/tbody/tr[1]/td[1]/a").InnerText;
-                var company = stock.SelectSingleNode("/html/body/div[4]/div[1]/div[1]/div/div/table/tbody/tr[1]/td[2]/a").InnerText;
-                var lastSale = stock.SelectSingleNode("/html/body/div[4]/div[1]/div[1]/div/div/table/tbody/tr[1]/td[3]/bg-quote").InnerText;
-                var change = stock.SelectSingleNode("/html/body/div[4]/div[1]/div[1]/div/div/table/tbody/tr[1]/td[4]/bg-quote").InnerText;
-                var pChg = stock.SelectSingleNode("/html/body/div[4]/div[1]/div[1]/div/div/table/tbody/tr[1]/td[5]/bg-quote").InnerText;
+                string ticker = stock.SelectSingleNode("/html/body/div[4]/div[1]/div[1]/div/div/table/tbody/tr[1]/td[1]/a").InnerText;
+                string company = stock.SelectSingleNode("/html/body/div[4]/div[1]/div[1]/div/div/table/tbody/tr[1]/td[2]/a").InnerText;
+                string lastSale = stock.SelectSingleNode("/html/body/div[4]/div[1]/div[1]/div/div/table/tbody/tr[1]/td[3]/bg-quote").InnerText;
+                string change = stock.SelectSingleNode("/html/body/div[4]/div[1]/div[1]/div/div/table/tbody/tr[1]/td[4]/bg-quote").InnerText;
+                string pChg = stock.SelectSingleNode("/html/body/div[4]/div[1]/div[1]/div/div/table/tbody/tr[1]/td[5]/bg-quote").InnerText;
 
                 ParsingTable Stocks = new ParsingTable();
                 Stocks.StockRecord = stockRecord;
