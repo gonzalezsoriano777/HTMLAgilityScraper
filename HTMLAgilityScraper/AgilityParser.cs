@@ -38,11 +38,11 @@ namespace HTMLAgilityScraper
             {
                 DateTime stockRecord = DateTime.Now;
 
-                var ticker = stock.SelectSingleNode("/html/body/div[4]/div[1]/div[1]/div/div/table/tbody/tr[1]/td[1]").InnerText.ToString();
-                var company = stock.SelectSingleNode("/html/body/div[4]/div[1]/div[1]/div/div/table/tbody/tr[1]/td[2]").InnerText.ToString();
-                var lastSale = stock.SelectSingleNode("/html/body/div[4]/div[1]/div[1]/div/div/table/tbody/tr[1]/td[3]").InnerText.ToString();
-                var change = stock.SelectSingleNode("/html/body/div[4]/div[1]/div[1]/div/div/table/tbody/tr[1]/td[4]").InnerText.ToString();
-                var pChg = stock.SelectSingleNode("/html/body/div[4]/div[1]/div[1]/div/div/table/tbody/tr[1]/td[5]").InnerText.ToString();
+                var ticker = stock.SelectSingleNode("/html/body/div[4]/div[1]/div[1]/div/div/table/tbody/tr[1]/td[1]/a").InnerText;
+                var company = stock.SelectSingleNode("/html/body/div[4]/div[1]/div[1]/div/div/table/tbody/tr[1]/td[2]/a").InnerText;
+                var lastSale = stock.SelectSingleNode("/html/body/div[4]/div[1]/div[1]/div/div/table/tbody/tr[1]/td[3]/bg-quote").InnerText;
+                var change = stock.SelectSingleNode("/html/body/div[4]/div[1]/div[1]/div/div/table/tbody/tr[1]/td[4]/bg-quote").InnerText;
+                var pChg = stock.SelectSingleNode("/html/body/div[4]/div[1]/div[1]/div/div/table/tbody/tr[1]/td[5]/bg-quote").InnerText;
 
                 ParsingTable Stocks = new ParsingTable();
                 Stocks.StockRecord = stockRecord;
