@@ -19,6 +19,10 @@ namespace HTMLAgilityScraper
      * Percent Change
      */
 
+        /*
+         Will print each input to the console (nodes for db)
+         */
+
     public class AgilityParser : dbCenter
     {
 
@@ -31,6 +35,8 @@ namespace HTMLAgilityScraper
             HtmlDocument newDoc = newStockPage.Load(marketSummary);
 
             HtmlNodeCollection stockTable = newDoc.DocumentNode.SelectNodes("/html/body/div[4]/div[1]/div[1]/div/div/table/tbody");
+
+            /*
 
             List<ParsingTable> ListOfStocks = new List<ParsingTable>();
 
@@ -56,6 +62,8 @@ namespace HTMLAgilityScraper
                 InsertDataToTable(Stocks);
             
             }
+
+    */
         }
 
     }
