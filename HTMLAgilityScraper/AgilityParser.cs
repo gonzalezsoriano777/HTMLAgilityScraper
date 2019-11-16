@@ -34,13 +34,10 @@ namespace HTMLAgilityScraper
             HtmlWeb newStockPage = new HtmlWeb();
             HtmlDocument newDoc = newStockPage.Load(marketSummary);
 
-            var stockTable = newDoc.DocumentNode.SelectNodes("/html/body/div[4]/div[1]/div[1]/div/div/div[1]/table/tbody/tr[1]/td[2]");
-
-            foreach(HtmlNode stock in stockTable)
-            {
-                var stockData = stock.InnerText;
-                Console.WriteLine(stockData);
-            }
+            var stockTable = newDoc.DocumentNode.SelectSingleNode("/html/body/div[4]/div[1]/div[1]/div/div/div[1]/table/tbody/tr[1]/td[2]/a");
+            
+            
+            
             /*
 
             List<ParsingTable> ListOfStocks = new List<ParsingTable>();
