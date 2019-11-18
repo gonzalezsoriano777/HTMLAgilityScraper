@@ -29,13 +29,18 @@ namespace HTMLAgilityScraper
         public void stockDataImplementation()
         {
 
-            string stockMarket = "";
+            string stockMarket = "https://www.marketwatch.com/markets/us?mod=markets";
 
             HtmlWeb stockWebsite = new HtmlWeb();
             HtmlDocument stockDoc = stockWebsite.Load(stockMarket);
 
-            HtmlNodeCollection stockTable = stockDoc.DocumentNode.SelectNodes("");
+            HtmlNodeCollection stockTable = stockDoc.DocumentNode.SelectNodes("/html/body/div[4]/div[1]/div[1]/div/div/div[1]/table/tbody/tr[2]");
 
+            foreach(var stock in stockTable)
+            {
+                var stockData = stock.InnerText;
+                Console.WriteLine(stockData);
+            }
             
             
             /*
