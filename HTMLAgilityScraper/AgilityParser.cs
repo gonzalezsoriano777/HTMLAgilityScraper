@@ -25,10 +25,8 @@ namespace HTMLAgilityScraper
 
     public class AgilityParser : dbCenter
     {
-
         public void stockDataImplementation()
         {
-
             string stockMarket = "https://www.marketwatch.com/markets/us?mod=markets";
 
             HtmlWeb stockWebsite = new HtmlWeb();
@@ -41,8 +39,7 @@ namespace HTMLAgilityScraper
                 var stockData = stock.InnerText;
                 Console.WriteLine(stockData);
             }
-            
-            
+                        
             /*
 
             List<ParsingTable> ListOfStocks = new List<ParsingTable>();
@@ -70,7 +67,7 @@ namespace HTMLAgilityScraper
             
             }
 
-    */
+        */
         }
 
     }
