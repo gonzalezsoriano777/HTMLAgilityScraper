@@ -13,10 +13,10 @@ namespace HTMLAgilityScraper.Agility
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ParsingOfDataEntityy : DbContext
+    public partial class DataParsingV2 : DbContext
     {
-        public ParsingOfDataEntityy()
-            : base("name=ParsingOfDataEntityy")
+        public DataParsingV2()
+            : base("name=DataParsingV2")
         {
         }
     

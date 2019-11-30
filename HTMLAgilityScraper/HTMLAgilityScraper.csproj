@@ -73,35 +73,35 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AgilityParser.cs" />
-    <Compile Include="Agility\ParsingDataModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ParsingDataModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Agility\ParsingDataModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ParsingDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Agility\ParsingDataModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ParsingDataModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Agility\ParsingTable.cs">
-      <DependentUpon>ParsingDataModel.tt</DependentUpon>
+      <DependentUpon>stockModelV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Agility\stockModelV2.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stockModelV2.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Agility\stockModelV2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stockModelV2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Agility\stockModelV2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stockModelV2.edmx</DependentUpon>
     </Compile>
     <Compile Include="dbCenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Agility\ParsingDataModel.edmx">
+    <EntityDeploy Include="Agility\stockModelV2.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ParsingDataModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>stockModelV2.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Agility\ParsingDataModel.edmx.diagram">
-      <DependentUpon>ParsingDataModel.edmx</DependentUpon>
+    <None Include="Agility\stockModelV2.edmx.diagram">
+      <DependentUpon>stockModelV2.edmx</DependentUpon>
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
@@ -110,15 +110,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Agility\ParsingDataModel.Context.tt">
+    <Content Include="Agility\stockModelV2.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ParsingDataModel.edmx</DependentUpon>
-      <LastGenOutput>ParsingDataModel.Context.cs</LastGenOutput>
+      <DependentUpon>stockModelV2.edmx</DependentUpon>
+      <LastGenOutput>stockModelV2.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Agility\ParsingDataModel.tt">
+    <Content Include="Agility\stockModelV2.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ParsingDataModel.edmx</DependentUpon>
-      <LastGenOutput>ParsingDataModel.cs</LastGenOutput>
+      <DependentUpon>stockModelV2.edmx</DependentUpon>
+      <LastGenOutput>stockModelV2.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

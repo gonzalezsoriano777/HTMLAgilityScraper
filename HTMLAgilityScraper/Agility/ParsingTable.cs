@@ -15,11 +15,10 @@ namespace HTMLAgilityScraper.Agility
     public partial class ParsingTable
     {
         public int Id { get; set; }
-        public Nullable<System.DateTime> StockRecord { get; set; }
-        public string Ticker { get; set; }
+        public System.DateTime StockRecord { get; set; }
         public string Company { get; set; }
         public string LastSale { get; set; }
         public string Change { get; set; }
-        public string PChg { get; set; }
+        public string PercentChange { get; set; }
     }
 }

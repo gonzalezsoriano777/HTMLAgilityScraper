@@ -10,12 +10,11 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="StockRecord" Type="datetime" />
-          <Property Name="Ticker" Type="nvarchar" MaxLength="50" />
-          <Property Name="Company" Type="nvarchar" MaxLength="50" />
+          <Property Name="StockRecord" Type="datetime" Nullable="false" />
+          <Property Name="Company" Type="text" />
           <Property Name="LastSale" Type="nvarchar" MaxLength="50" />
           <Property Name="Change" Type="nvarchar" MaxLength="50" />
-          <Property Name="PChg" Type="nvarchar" MaxLength="50" />
+          <Property Name="PercentChange" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="ParsingOfDataModelStoreContainer">
           <EntitySet Name="ParsingTable" EntityType="Self.ParsingTable" Schema="dbo" store:Type="Tables" />
@@ -30,14 +29,13 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="StockRecord" Type="DateTime" Precision="3" />
-          <Property Name="Ticker" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Company" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StockRecord" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Company" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="LastSale" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Change" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PChg" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PercentChange" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityContainer Name="ParsingOfDataEntityy" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="DataParsingV2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ParsingTables" EntityType="Self.ParsingTable" />
         </EntityContainer>
       </Schema>
@@ -45,17 +43,16 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ParsingOfDataModelStoreContainer" CdmEntityContainer="ParsingOfDataEntityy">
+        <EntityContainerMapping StorageEntityContainer="ParsingOfDataModelStoreContainer" CdmEntityContainer="DataParsingV2">
           <EntitySetMapping Name="ParsingTables">
             <EntityTypeMapping TypeName="ParsingOfDataModel.ParsingTable">
               <MappingFragment StoreEntitySet="ParsingTable">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="StockRecord" ColumnName="StockRecord" />
-                <ScalarProperty Name="Ticker" ColumnName="Ticker" />
                 <ScalarProperty Name="Company" ColumnName="Company" />
                 <ScalarProperty Name="LastSale" ColumnName="LastSale" />
                 <ScalarProperty Name="Change" ColumnName="Change" />
-                <ScalarProperty Name="PChg" ColumnName="PChg" />
+                <ScalarProperty Name="PercentChange" ColumnName="PercentChange" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
