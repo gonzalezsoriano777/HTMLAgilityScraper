@@ -41,7 +41,8 @@ namespace HTMLAgilityScraper
 
                     db.Close();
                     Console.WriteLine("Database table has been inserted with data");
-
+                    Console.WriteLine();
+                    Console.WriteLine("Database has been shut down");
                 } 
 
             }
