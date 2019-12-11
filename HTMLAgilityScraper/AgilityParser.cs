@@ -39,10 +39,10 @@ namespace HTMLAgilityScraper
             foreach (HtmlNode stock in stockTable)
             {
                 DateTime stockRecord = DateTime.Now;
-                var company = stock.SelectSingleNode("/html/body/div[1]/div[5]/div[3]/div[1]/div/table/tbody/tr[1]/td[1]/a").InnerText;
+                var company = stock.SelectSingleNode("/html/body/div[1]/div[5]/div[3]/div[1]/div/table/tbody/tr[1]/td[1]").InnerText;
                 var lastSale = stock.SelectSingleNode("/html/body/div[1]/div[5]/div[3]/div[1]/div/table/tbody/tr[1]/td[2]").InnerText;
-                var change = stock.SelectSingleNode("/html/body/div[1]/div[5]/div[3]/div[1]/div/table/tbody/tr[1]/td[3]/bg-quote").InnerText;
-                var percentChange = stock.SelectSingleNode("/html/body/div[1]/div[5]/div[3]/div[1]/div/table/tbody/tr[1]/td[4]/bg-quote").InnerText;
+                var change = stock.SelectSingleNode("/html/body/div[1]/div[5]/div[3]/div[1]/div/table/tbody/tr[1]/td[3]").InnerText;
+                var percentChange = stock.SelectSingleNode("/html/body/div[1]/div[5]/div[3]/div[1]/div/table/tbody/tr[1]/td[4]").InnerText;
 
                 ParsingTable Stocks = new ParsingTable();
                 Stocks.StockRecord = stockRecord;
